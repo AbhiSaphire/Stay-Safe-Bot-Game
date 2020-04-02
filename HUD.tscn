@@ -32,10 +32,13 @@ __meta__ = {
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_top = -39.0
-margin_bottom = 39.0
+margin_left = 1.0
+margin_top = -89.0001
+margin_right = 1.0
+margin_bottom = 69.9999
 custom_fonts/font = SubResource( 2 )
-text = "Stay Safe Bot"
+text = "Stay-Safe
+Bot!"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false

@@ -1,18 +1,21 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main.gd" type="Script" id=2]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Mob.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1.40018, 0.500019, 0, 0, 0, 0, 482.1, 2.40002, 0, 0, 0, 0, 482.1, 722.5, 0, 0, 0, 0, -0.499847, 724.4, 0, 0, 0, 0, 0.450165, 721.55, 0, 0, 0, 0, 1.40018, 0.500019 )
 }
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node"]
 script = ExtResource( 2 )
+Mob = ExtResource( 4 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
+visible = false
 
 [node name="MobTimer" type="Timer" parent="."]
 wait_time = 0.5
@@ -31,11 +34,11 @@ curve = SubResource( 1 )
 
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
 position = Vector2( 1.40018, 0.500019 )
-rotation = 0.00395255
+rotation = 0.00395254
 
 [node name="HUD" parent="." instance=ExtResource( 3 )]
-[connection signal="hit" from="Player" to="." method="_on_Player_hit"]
+[connection signal="hit" from="Player" to="." method="game_over"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
-[connection signal="start_game" from="HUD" to="HUD" method="_on_HUD_start_game"]
+[connection signal="start_game" from="HUD" to="." method="new_game"]
