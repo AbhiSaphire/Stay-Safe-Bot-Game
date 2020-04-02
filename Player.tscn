@@ -20,18 +20,19 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 26.797
-height = 13.5425
+radius = 15.9
+height = 8.92254
 
 [node name="Player" type="Area2D"]
-position = Vector2( 3, 0 )
+position = Vector2( 0.226105, 0.554779 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
 }
+speed = 350
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 1 )
 animation = "up"
 

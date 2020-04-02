@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://dodge_assets/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://HUD.gd" type="Script" id=2]
@@ -15,6 +15,12 @@ font_data = ExtResource( 1 )
 size = 64
 font_data = ExtResource( 1 )
 
+[sub_resource type="InputEventAction" id=4]
+action = "ui_select"
+
+[sub_resource type="ShortCut" id=5]
+shortcut = SubResource( 4 )
+
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 2 )
 
@@ -22,7 +28,10 @@ script = ExtResource( 2 )
 anchor_right = 1.0
 margin_bottom = 78.0
 custom_fonts/font = SubResource( 1 )
-text = "0"
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Score"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -37,9 +46,27 @@ margin_top = -89.0001
 margin_right = 1.0
 margin_bottom = 69.9999
 custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Stay-Safe
 Bot!"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CopyrightLabel" type="Label" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -14.0
+margin_right = 88.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "©AbhiSaphire"
+align = 1
+valign = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -54,6 +81,11 @@ margin_top = -200.0
 margin_right = 152.5
 margin_bottom = -100.0
 custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+shortcut = SubResource( 5 )
 text = "START"
 __meta__ = {
 "_edit_use_anchors_": false

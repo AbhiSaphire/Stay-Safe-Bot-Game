@@ -10,11 +10,6 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 1 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "walk",
-"speed": 4.0
-}, {
 "frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "swim",
@@ -24,19 +19,25 @@ animations = [ {
 "loop": true,
 "name": "fly",
 "speed": 3.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "walk",
+"speed": 4.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 36.0
-height = 26.7063
+radius = 19.5
+height = 14.2826
 
 [node name="Mob" type="RigidBody2D"]
 collision_mask = 0
 gravity_scale = 0.0
 script = ExtResource( 7 )
+min_speed = 130
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 0.75, 0.75 )
+scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 1 )
 animation = "walk"
 
